@@ -19,7 +19,15 @@ const NewMovieForm = ({ onAddMovie }) => {
   };
 
   const handleRatingChange = (event) => {
-    setRating(event.target.value);
+    let value = Number(event.target.value);
+
+    if (value < 0) {
+      value = 0;
+    } else if (value > 10) {
+      value = 10;
+    }
+  
+    setRating(value);
   };
 
   const handleSubmit = (event) => {
