@@ -59,13 +59,15 @@ const App = () => {
   return (
     <div className="app">
       <h1>Movie App</h1>
-      <Filter
+      <div className="center_position">
+        <Filter
         onFilter={({ title, rating }) => {
           setTitleFilter(title);
           setRatingFilter(rating);
         }}
       />
-      <NewMovieForm onAddMovie={handleAddMovie} />
+      < NewMovieForm onAddMovie={handleAddMovie} />
+      </div>
       <MovieList
         movies={movies.filter((movie) => {
           return (
